@@ -13,4 +13,8 @@ public class DetailResult {
     public void setMatch(Match match) {
         this.match = match;
     }
+
+    public static void main(String[] args) {
+        System.out.println("helloWorld");
+    }
 }
