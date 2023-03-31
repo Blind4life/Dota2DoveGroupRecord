@@ -18,6 +18,7 @@ public class Match {
     private int gameMode;
     private int radianScore;
     private int direScore;
+    private int binaryPlayers;
 
     public long getMatchSeqNum() {
         return matchSeqNum;
@@ -124,6 +125,14 @@ public class Match {
     @JsonProperty("players")
     public void setPlayers(List<Player> players) {
         this.players = players;
+    }
+
+    public int getBinaryPlayers() {
+        return binaryPlayers;
+    }
+
+    public void setBinaryPlayers(int binaryPlayers) {
+        this.binaryPlayers = binaryPlayers;
     }
 
     @Override

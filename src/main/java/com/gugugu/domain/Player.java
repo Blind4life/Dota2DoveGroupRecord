@@ -3,6 +3,7 @@ package com.gugugu.domain;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Player {
+    private long matchId;
     @JsonProperty("account_id")
     private long accountId;
     @JsonProperty("player_slot")
@@ -43,6 +44,13 @@ public class Player {
     @JsonProperty("tower_damage")
     private int towerDamage;
 
+    public long getMatchId() {
+        return matchId;
+    }
+
+    public void setMatchId(long matchId) {
+        this.matchId = matchId;
+    }
 
     public long getAccountId() {
         return accountId;
