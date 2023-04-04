@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gugugu.dao.mapper.CreateMapper">
+    <insert id="saveMatchId">
+        insert into matches (`id`, `players`) value (#{matchId}, #{binaryPlayers})
+    </insert>
+    <insert id="saveMatchDetails">
+        insert into
+            matches_details
+            (`id`, `binary_players`, `radiant_win`, `duration`, `tower_state_radiant`,
+             `tower_state_dire`, `game_mode`, `radiant_score`, `dire_score`)
+             value
+            (#{matchId}, #{binaryPlayers}, #{radiantWin}, #{duration}, #{towerStatusRadiant},
+            #{towerStatusDire}, #{gameMode}, #{radianScore}, #{direScore})
+    </insert>
+    <insert id="savePlayersDetails">
+        insert into
+            players_details
+            (`match_id`, `account_id`, `player_slot`, `team_number`, `team_slot`,
+             `hero_id`, `item_0`, `item_1`, `item_2`, `item_3`, `item_4`, `item_5`,
+             `item_neutral`, `kill`, `deaths`, `assists`, `last_hits`, `denies`,
+             `gold_per_min`, `xp_per_min`, `level`, `hero_damage`, `tower_damage`)
+             value
+            (#{matchId}, #{accountId}, #{playerSlot}, #{teamNumber}, #{teamSlot},
+            #{heroId}, #{item0}, #{item1}, #{item2}, #{item3}, #{item4}, #{item5},
+            #{itemNeutral}, #{kills}, #{deaths}, #{assists}, #{lastHits}, #{denies},
+            #{goldPerMin}, #{xpPerMin}, #{level}, #{heroDamage}, #{towerDamage})
+    </insert>
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gugugu.dao.mapper.ReadMapper">
+
+    <select id="SelectAllTeamMatch" resultMap="field_column">
+        select
+            *
+        from
+            `matches`
+    </select>
+
+    <resultMap id="field_column" type="Match">
+        <id column="id" property="matchId"></id>
+        <result column="players" property="binaryPlayers"></result>
+    </resultMap>
+</mapper>
